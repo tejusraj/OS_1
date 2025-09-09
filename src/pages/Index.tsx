@@ -1,12 +1,45 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from 'react';
+import { StatusBar } from '@/components/StatusBar';
+import { ClockWidget } from '@/components/ClockWidget';
+import { QuickToggles } from '@/components/QuickToggles';
+import { DockIcons } from '@/components/DockIcons';
+import { CameraView } from '@/components/CameraView';
 
 const Index = () => {
+  const [showCamera, setShowCamera] = useState(false);
+
+  const handleCameraClick = () => {
+    setShowCamera(true);
+  };
+
+  const handleCameraClose = () => {
+    setShowCamera(false);
+  };
+
+  if (showCamera) {
+    return <CameraView onClose={handleCameraClose} />;
+  }
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <div className="min-h-screen bg-gradient-homescreen flex flex-col max-w-sm mx-auto relative overflow-hidden">
+      {/* Status Bar */}
+      <StatusBar />
+      
+      {/* Main Content Area */}
+      <div className="flex-1 flex flex-col justify-between pt-8 pb-32">
+        {/* Clock Widget */}
+        <div className="flex-1 flex items-center justify-center">
+          <ClockWidget />
+        </div>
+        
+        {/* Quick Toggles */}
+        <div className="mt-auto">
+          <QuickToggles />
+        </div>
       </div>
+      
+      {/* Dock Icons */}
+      <DockIcons onCameraClick={handleCameraClick} />
     </div>
   );
 };

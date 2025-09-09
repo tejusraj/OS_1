@@ -57,6 +57,31 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Mobile OS specific colors
+        "status-bar": "hsl(var(--status-bar-bg))",
+        "widget": "hsl(var(--widget-bg))",
+        "widget-border": "hsl(var(--widget-border))",
+        "dock": "hsl(var(--dock-bg))",
+        "toggle-active": "hsl(var(--toggle-active))",
+        "toggle-inactive": "hsl(var(--toggle-inactive))",
+        "icon-bg": "hsl(var(--icon-bg))",
+        "icon-active": "hsl(var(--icon-active))",
+      },
+      backgroundImage: {
+        "gradient-homescreen": "var(--gradient-homescreen)",
+        "gradient-widget": "var(--gradient-widget)",
+        "gradient-dock": "var(--gradient-dock)",
+        "gradient-icon": "var(--gradient-icon)",
+      },
+      boxShadow: {
+        "widget": "var(--shadow-widget)",
+        "dock": "var(--shadow-dock)",
+        "icon": "var(--shadow-icon)",
+        "glow": "var(--shadow-glow)",
+      },
+      transitionTimingFunction: {
+        "smooth": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "spring": "cubic-bezier(0.175, 0.885, 0.32, 1.275)",
       },
       borderRadius: {
         lg: "var(--radius)",
